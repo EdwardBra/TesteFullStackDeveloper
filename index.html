@@ -1,0 +1,69 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+      <head>
+        <title>Prototipo Consumo de Webservice GEORANKER</title>
+        <meta charset="utf-8">
+      </head>
+     		 
+			 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		  
+	
+	 <body>
+	  	
+	    <script>													
+				
+			function AcessoWS() {
+			 
+				$(".form").submit(function(){
+				
+					$.ajax({ 
+					
+					url: "envia.php",
+					type: "POST" ,
+					data: $(".form").serialize(),
+					
+					sucess: function( data ) {
+						$(".receberDados").html(data){
+					}					
+					)};
+					
+					return false;																														
+			
+				});
+	
+		}							
+									
+			</script>
+
+	<div>     
+			<h1>Prototipo para teste Full Stack Developer</h1>
+		
+        <div>
+			<p>
+				<form class="form" action="" method="POST" autocomplete="off">
+				<p>ID:</p>						
+			    <input class="edits" type="text" id="id" "name="id">						
+				<br>
+				<p>EMAIL:</p>					
+				<input  class="edits" type="text" id="email" name="email">	
+				<br>
+				<p>SESSION:</p>					
+				<input   class="edits" type="text" id="session" name="session">				
+				
+				<button   class="btn" type="button" onClick="AcessoWS();">Send</button>				
+							
+			</p>
+			
+		</div>
+		
+		<div class="receberDados"> 
+		
+		</div>
+			  	
+		
+</form>
+	   
+	   
+	   
+      </body>
+    </html>
